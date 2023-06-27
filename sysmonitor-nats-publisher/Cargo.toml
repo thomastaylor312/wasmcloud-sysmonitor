@@ -1,0 +1,22 @@
+[package]
+name = "sysmonitor-nats-publisher"
+version = "0.1.0"
+authors = [ "" ]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "sysmonitor_nats_publisher"
+
+[dependencies]
+futures = "0.3"
+serde_json = "1.0"
+wasmbus-rpc = "0.13"
+wasmcloud-interface-sysmonitor = { path = "../interface/rust" }
+wasmcloud-interface-messaging = "0.9"
+
+[profile.release]
+# Optimize for small code size
+lto = true
+opt-level = "s"
+strip = true

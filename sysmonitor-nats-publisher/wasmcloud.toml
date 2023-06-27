@@ -1,0 +1,7 @@
+name = "sysmonitor_nats_publisher"
+language = "rust"
+type = "actor"
+version = "0.1.0"
+
+[actor]
+claims = ["wasmcloud:messaging", "wasmcloud:exp:sysmonitor"]
